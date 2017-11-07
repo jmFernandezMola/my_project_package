@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<launch>
+	<!-- Afegeix el namespace -->
+	<group ns = "masteruvic">
+		<rosparam command="load" file="$(find my_project_package)/parametres.yaml" />
+	
+	</group>
+
+	<!-- Afegeix el RVIZ -->
+	<node name="rviz" pkg="rviz" type="rviz"/>
+
+	<!-- Afegeix el launch del cam_usb -->
+	<include file="$(find usb_cam)/launch/usb_cam-test.launch"/>
+</launch>
